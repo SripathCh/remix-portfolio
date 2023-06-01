@@ -5,17 +5,15 @@ import { useColorModeValue } from "@chakra-ui/react";
 import homeStyles from "../styles/pages.home.css";
 import { Avatar, AvatarBadge, AvatarGroup } from "@chakra-ui/react";
 import profilePic from "../../public/profilepic.png";
+import { Text } from '@chakra-ui/react'
+import { color } from "framer-motion";
 
 export default function Home() {
-  const colors = useColorModeValue(
-    ["red.50", "teal.50", "blue.50"],
-    ["red.900", "teal.900", "blue.900"]
-  );
-  const [tabIndex, setTabIndex] = useState(0);
-  const bg = colors[tabIndex];
+
   const tabPanelStyle = {
     justifyContent: 'center',
     borderBottom: 'none',
+    color:'black',
   };
   const MyAvatar = () => (
     <Wrap>
@@ -32,13 +30,15 @@ export default function Home() {
   return (
     <div className="main-container">
       <ChakraProvider>
-        <Tabs onChange={(index) => setTabIndex(index)} bg={bg}>
-          <TabList style={tabPanelStyle}>
+        <Tabs variant='soft-rounded' colorScheme='teal'>
+          <TabList className="navbar-text" style={tabPanelStyle}>
             <Tab>Home</Tab>
             <Tab>About</Tab>
             <Tab>Contact Me</Tab>
           </TabList>
           <MyAvatar/>
+          <Text className="name">Sripath Cherukuri</Text>
+          <Text className="img-sub font-serif text-2xl italic leading-normal tracking-tight text-slate-500">Pursuing Master's in Computer Science <br></br> at George Mason University</Text>
           <TabPanels p="2rem">
             <TabPanel>Home</TabPanel>
             <TabPanel>About</TabPanel>
