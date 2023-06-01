@@ -1,8 +1,9 @@
-import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
+import { Tabs, TabList, TabPanels, Tab, TabPanel, Wrap, WrapItem } from "@chakra-ui/react";
 import { ChakraProvider } from "@chakra-ui/react";
 import { useState } from "react";
 import { useColorModeValue } from "@chakra-ui/react";
 import homeStyles from "../styles/pages.home.css";
+import { Avatar, AvatarBadge, AvatarGroup } from "@chakra-ui/react";
 
 export default function Home() {
   const colors = useColorModeValue(
@@ -11,8 +12,18 @@ export default function Home() {
   );
   const [tabIndex, setTabIndex] = useState(0);
   const bg = colors[tabIndex];
+  const MyAvatar = () => (
+    <Wrap>
+      <WrapItem>
+        <Avatar
+          size="2xl"
+          name="Segun Adebayo"
+          src="https://bit.ly/sage-adebayo"
+        />{" "}
+      </WrapItem>
+    </Wrap>
+  );
 
-  
   return (
     <div className="main-container">
       <ChakraProvider>
@@ -23,6 +34,7 @@ export default function Home() {
             <Tab>Blue</Tab>
           </TabList>
           <TabPanels p="2rem">
+            <MyAvatar/>
             <TabPanel>The Primary Colors</TabPanel>
             <TabPanel>Are 1, 2, 3</TabPanel>
             <TabPanel>Red, yellow and blue.</TabPanel>
@@ -34,5 +46,5 @@ export default function Home() {
 }
 
 export function links() {
-    return [{ rel: 'stylesheet', href: homeStyles }]
+  return [{ rel: "stylesheet", href: homeStyles }];
 }
