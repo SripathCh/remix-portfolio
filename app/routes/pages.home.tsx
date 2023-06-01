@@ -13,6 +13,10 @@ export default function Home() {
   );
   const [tabIndex, setTabIndex] = useState(0);
   const bg = colors[tabIndex];
+  const tabPanelStyle = {
+    justifyContent: 'center',
+    borderBottom: 'none',
+  };
   const MyAvatar = () => (
     <Wrap>
       <WrapItem>
@@ -29,13 +33,13 @@ export default function Home() {
     <div className="main-container">
       <ChakraProvider>
         <Tabs onChange={(index) => setTabIndex(index)} bg={bg}>
-          <TabList>
+          <TabList style={tabPanelStyle}>
             <Tab>Home</Tab>
             <Tab>About</Tab>
             <Tab>Contact Me</Tab>
           </TabList>
+          <MyAvatar/>
           <TabPanels p="2rem">
-            <MyAvatar/>
             <TabPanel>Home</TabPanel>
             <TabPanel>About</TabPanel>
             <TabPanel>Contact Me</TabPanel>
