@@ -1,4 +1,4 @@
-import { Tabs, TabList, TabPanels, Tab, TabPanel, Wrap, WrapItem } from "@chakra-ui/react";
+import { Tabs, TabList, TabPanels, Tab, TabPanel, Wrap, WrapItem, Box } from "@chakra-ui/react";
 import { ChakraProvider } from "@chakra-ui/react";
 import { useState } from "react";
 import { useColorModeValue } from "@chakra-ui/react";
@@ -15,6 +15,7 @@ export default function Home() {
     borderBottom: 'none',
     color:'black',
   };
+
   const MyAvatar = () => (
     <Wrap>
       <WrapItem>
@@ -30,7 +31,7 @@ export default function Home() {
   return (
     <div className="main-container">
       <ChakraProvider>
-        <Tabs variant='soft-rounded' colorScheme='teal'>
+        <Tabs variant='soft-rounded' colorScheme='cyan'>
           <TabList className="navbar-text" style={tabPanelStyle}>
             <Tab>Home</Tab>
             <Tab>About</Tab>
@@ -38,9 +39,19 @@ export default function Home() {
           </TabList>
           <MyAvatar/>
           <Text className="name">Sripath Cherukuri</Text>
-          <Text className="img-sub font-serif text-2xl italic leading-normal tracking-tight text-slate-500">Pursuing Master's in Computer Science <br></br> at George Mason University</Text>
+          <Text className="img-sub font-serif text-2xl italic leading-normal tracking-tight text-slate-500">
+            Pursuing Master's in Computer Science <br></br> at George Mason University
+          </Text>
+          <br></br>
+          <Box>
+            <hr/>
+          </Box>
           <TabPanels p="2rem">
-            <TabPanel>Home</TabPanel>
+            <TabPanel>
+                <Text className=".intro-text" textAlign={"justify"}>
+                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+                </Text>
+            </TabPanel>
             <TabPanel>About</TabPanel>
             <TabPanel>Contact Me</TabPanel>
           </TabPanels>
