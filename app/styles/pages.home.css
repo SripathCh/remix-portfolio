@@ -63,3 +63,7 @@ border-radius: 5px;
 .intro-text{
     text-align: left;
 }
+
+.cardsdiv{
+    padding: 2rem;
+}
