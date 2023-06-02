@@ -14,11 +14,9 @@ const Cardplate = ({imageSrc, alt, title, description, buttontext1, buttontext2,
       <Divider />
       <CardFooter>
         <ButtonGroup spacing="2">
-            <a href={hyperlink}>
             <Button variant="solid" colorScheme="blue">
-            {buttontext1}
+            <a href={hyperlink} target="_blank">{buttontext1}</a>
           </Button>
-            </a>
           <Button variant="ghost" colorScheme="blue">
           {buttontext2}
           </Button>

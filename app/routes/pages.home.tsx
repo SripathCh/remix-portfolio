@@ -26,10 +26,6 @@ export default function Home() {
     color: "black",
   };
 
-  const cardDivStyle = {
-    padding:"2rem",
-  };
-
   const cards = [
     {
       imageSrc:
@@ -41,6 +37,26 @@ export default function Home() {
       buttontext2: "Read More",
       hyperlink: "https://github.com/SripathCh/remix-portfolio.git",
     },
+    {
+        imageSrc:
+          portfolioImg,
+        alt: "Personal Portfolio Website",
+        title: "Personal Portfolio Website",
+        description: "This is personal project that I took up in the summer 2023. This is an initiative taken by me to learn and gain in-depth knowledge about React.js, Remix.js, routing pages and UI/UX design.",
+        buttontext1: "GitHub",
+        buttontext2: "Read More",
+        hyperlink: "https://github.com/SripathCh/remix-portfolio.git",
+      },
+      {
+        imageSrc:
+          portfolioImg,
+        alt: "Personal Portfolio Website",
+        title: "Personal Portfolio Website",
+        description: "This is personal project that I took up in the summer 2023. This is an initiative taken by me to learn and gain in-depth knowledge about React.js, Remix.js, routing pages and UI/UX design.",
+        buttontext1: "GitHub",
+        buttontext2: "Read More",
+        hyperlink: "https://github.com/SripathCh/remix-portfolio.git",
+      },
     // Add more cards as needed
   ];
 
@@ -93,7 +109,10 @@ export default function Home() {
             <TabPanel>Contact Me</TabPanel>
           </TabPanels>
         </Tabs>
-        <div style={cardDivStyle}>
+        <Text className="name">Projects</Text>
+        <br></br>
+        <hr></hr>
+        <div className="cardsdiv">
           {cards.map((card, index) => (
             <Cardplate
                   key={index}
